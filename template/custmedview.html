@@ -1,0 +1,48 @@
+{% extends 'custindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="searchmed#c">
+  <table width="200" border="1" class="table table-striped" id="customers">
+     <tr>
+      <th colspan="8"><font size="6px"><div align="center"><strong>Medicine List</strong></div> </font> </th>
+    </tr>
+    <tr>
+      <td colspan="3"><div align="center"><strong>Pharmacy Name</strong></div></td>
+      <td colspan="3"><div align="center">
+        <select name="select">
+              {% for i in tim %}
+                <option value="{{i.id}}" {% if i.id == tm %}selected{% endif %}>{{i.pharmacy_name}}</option>
+          {% endfor %}
+        </select>
+      </div></td>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SEARCH" class="btn btn-primary " />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><strong>SI NO</strong></div></td>
+        <td><div align="center"><strong>MEDICINE NAME</strong></div></td>
+      <td><div align="center"><strong>PHONE NO</strong></div></td>
+        <td><div align="center"><strong>TABLET PRICE</strong></div></td>
+        <td><div align="center"><strong>TABLET QUANTITY</strong></div></td>
+        <td><div align="center"><strong>ISSUE DATE</strong></div></td>
+        <td><div align="center"><strong>EXPIRY DATE</strong></div></td>
+      <td></td>
+    </tr>
+    {% for i in nval %}
+     {% if i.type != 'outstock' %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+        <td>{{i.med_name}}</td>
+      <td>{{i.pharmacy_id.phone}}</td>
+        <td>&nbsp;{{i.tablet_price}}</td>
+        <td>&nbsp;{{i.tablet_quantity}}</td>
+        <td>&nbsp;{{i.issue_date}}</td>
+        <td>&nbsp;{{i.exp_date}}</td>
+      <td><a href="{% url 'order' id=i.id %}"  class="btn btn-primary btn-sm">Order Now</a></td>
+
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block body %}
+<form name="form1" method="post" action="signup_cust#c">
+  <table width="264" height="209" border="1" class="table">
+    <tr>
+      <td>NAME</td>
+      <td><input type="text" name="textfield" class="form-control" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td>PHONE </td>
+      <td><input type="text" name="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td><input type="text" name="textfield3" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>PLACE</td>
+      <td><input type="text" name="textfield4" class="form-control" required pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+    <tr>
+      <td>HOUSE NAME </td>
+      <td><input type="text" name="textfield5" class="form-control" required pattern="[A-Z a-z.]{3,25}"  /></td>
+    </tr>
+     <tr>
+      <td>POST </td>
+      <td><input type="text" name="textfield6" class="form-control" required /></td>
+    </tr>
+       <tr>
+      <td>USER NAME </td>
+      <td><input type="text" name="textfield7" class="form-control" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+       <tr>
+      <td>PASSWORD </td>
+      <td><input type="password" name="textfield8" class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+          <input type="submit" name="Submit" value="REGISTER" class="btn btn-primary" />
+      </div></td>
+
+    </tr>
+  </table>
+</form>
+{% endblock %}

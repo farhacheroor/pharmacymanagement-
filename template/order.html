@@ -1,0 +1,40 @@
+{% extends 'custindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/placeorder">
+  <table width="200" border="1" class="table " id="customers">
+<tr>
+      <th colspan="7"><div align="center" ><font size="6px"><strong>Place Order</strong></font></div></th>
+    </tr>
+      <tr>
+      <td>Name</td>
+      <td><input type="text" name="textfield7" class="form-control"  required  /></td>
+    </tr>
+      <tr>
+      <td>Address</td>
+      <td><input type="text" name="textfield8" class="form-control" required  /></td>
+    </tr>
+      <tr>
+      <td>Phone Number</td>
+      <td><input type="text" name="textfield9" class="form-control"  required  /></td>
+    </tr>
+       <tr>
+      <td>Tablet Name</td>
+      <td><input type="text" name="textfield10" class="form-control" value="{{val.med_name}}" required readonly /></td>
+    </tr>
+       <tr>
+      <td>Tablet Quantity(Month)</td>
+      <td><input type="text" name="textfield11" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Prescription (Upload Image)</td>
+      <td><input type="file" name="image" class="form-control" accept="images/*" required  /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="Place Order" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

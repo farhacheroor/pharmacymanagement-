@@ -1,0 +1,32 @@
+{% extends 'pharmacyindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/edit">
+  <table width="200" border="1" class="table " id="customers">
+<tr>
+      <th colspan="7"><div align="center" ><font size="6px"><strong>Update Medicine</strong></font></div></th>
+    </tr>
+       <tr>
+      <td>Tablet Price</td>
+      <td><input type="text" name="textfield10" class="form-control" value="{{val.tablet_price}}" required  /></td>
+    </tr>
+       <tr>
+      <td>Tablet Quantity</td>
+      <td><input type="text" name="textfield11" class="form-control" value="{{val.tablet_quantity}}" required  /></td>
+    </tr>
+       <tr>
+      <td>Issue Date</td>
+      <td><input type="date" name="textfield12" class="form-control" value="{{val.issue_date}}" required  /></td>
+    </tr>
+       <tr>
+      <td>Expiry Date</td>
+      <td><input type="date" name="textfield13" class="form-control" value="{{val.exp_date}}" required  /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="UPDATE" class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

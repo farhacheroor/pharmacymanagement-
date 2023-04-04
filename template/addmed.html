@@ -1,0 +1,80 @@
+{% extends 'pharmacyindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="add_med#c">
+  <table width="200" border="1" class="table " id="customers">
+<tr>
+      <th colspan="7"><div align="center" ><font size="6px"><strong>Add Medicine</strong></font></div></th>
+    </tr>
+    <tr>
+      <td>Pharmacy Name</td>
+      <td>
+        <div align="left">
+          <select name="select">
+            {% for i in gval %}
+            <option value="{{i.id}}">{{i.pharmacy_name}}</option>
+              {% endfor %}
+          </select>
+
+        </div></td>
+    </tr>
+    <tr>
+      <td>Ref No</td>
+      <td><input type="text" name="textfield" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Medicine Name</td>
+      <td><input type="text" name="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Company Name</td>
+      <td><input type="text" name="textfield3" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Medicine type</td>
+      <td><input type="text" name="textfield4" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Uses </td>
+      <td><input type="text" name="textfield5" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Side Effect</td>
+      <td><input type="text" name="textfield6" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Precuation Warning</td>
+      <td><input type="text" name="textfield7" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Dosage</td>
+      <td><input type="text" name="textfield8" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Lot No</td>
+      <td><input type="text" name="textfield9" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Tablet Price</td>
+      <td><input type="text" name="textfield10" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Tablet Quantity</td>
+      <td><input type="text" name="textfield11" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Issue Date</td>
+      <td><input type="date" name="textfield12" class="form-control" required  /></td>
+    </tr>
+       <tr>
+      <td>Expiry Date</td>
+      <td><input type="date" name="textfield13" class="form-control" required  /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="ADD" class="btn btn-primary"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

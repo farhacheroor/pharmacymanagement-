@@ -1,0 +1,52 @@
+{% extends 'pharmacyindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-hover" id="customers">
+    <tr>
+      <th colspan="15"><div align="center" ><font size="6px"><strong>Mendcine Info</strong></font></div></th>
+    </tr>
+    &nbsp;&nbsp;
+    <tr>
+      <td><strong>SI NO</strong></td>
+      <td><strong>MEDICINE NAME</strong></td>
+      <td><strong>REF_NO</strong></td>
+      <td><strong>COMPANY NAME</strong></td>
+       <td><strong>MEDICINE TYPE</strong></td>
+        <td><strong>USES</strong></td>
+        <td><strong>SIDE EFFECT</strong></td>
+        <td><strong>PRECUATION & WARNING</strong></td>
+        <td><strong>DOSAGE</strong></td>
+        <td><strong>LOT NO</strong></td>
+        <td><strong>TABLET PRICE</strong></td>
+        <td><strong>TABLET QUANTITY</strong></td>
+        <td><strong>ISSUE DATE</strong></td>
+        <td><strong>EXPIRY DATE</strong></td>
+        <td></td>
+    </tr>
+    {% for i in b %}
+       {% if i.type != 'outstock' %}
+
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{i.med_name}}</td>
+      <td>{{i.ref_no}}</td>
+      <td>&nbsp;{{i.company_name}}</td>
+          <td>&nbsp;{{i.med_type}}</td>
+             <td>&nbsp;{{i.uses}}</td>
+             <td>&nbsp;{{i.side_effect}}</td>
+             <td>&nbsp;{{i.prec_warning}}</td>
+             <td>&nbsp;{{i.dosage}}</td>
+             <td>&nbsp;{{i.lot_no}}</td>
+             <td>&nbsp;{{i.tablet_price}}</td>
+             <td>&nbsp;{{i.tablet_quantity}}</td>
+             <td>&nbsp;{{i.issue_date}}</td>
+             <td>&nbsp;{{i.exp_date}}</td>
+            <td><a href="{% url 'updates' id=i.id %}"  class="btn btn-primary btn-sm">Edit</a><br><br>
+            <a href="{% url 'outstock' id=i.id %}" class="btn btn-primary btn-sm"><strong>Outstock</strong></a></td>
+    </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}

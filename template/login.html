@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block body %}
+<div style="position: relative;
+  	float: top;
+  	margin:10px;
+  	align:center;
+    width: 350px;
+    height: 70vh;
+    transition: 1.3s;
+    transform-style: preserve-3d;">
+<form id="form1" name="form1" method="post" action="logins">
+  <table width="1" border="1" class="table ">
+    <tr>
+      <td><input type="text" name="textfield" class="form-control" placeholder="USERNAME" required autofocus/></td>
+    </tr>
+    <tr>
+      <td><input type="password" name="textfield2"class="form-control" placeholder="PASSWORD" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="LOGIN" class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</div>
+</div>
+{% endblock %}
